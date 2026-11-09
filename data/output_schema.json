@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Refine-loop submission formats",
+  "trace_jsonl_line": {
+    "type": "object",
+    "description": "One line per loop iteration per vacancy, in the order they happened.",
+    "required": ["vacancy_id", "iteration", "criteria", "observed", "diagnosis"],
+    "properties": {
+      "vacancy_id": {"type": "string"},
+      "iteration": {"type": "integer", "minimum": 1},
+      "criteria": {"type": "object", "description": "The filters you sent to the provider this round."},
+      "observed": {
+        "type": "object",
+        "required": ["total_count", "returned", "new", "passed"],
+        "properties": {
+          "total_count": {"type": "integer", "description": "Size of the matching space this round."},
+          "returned": {"type": "integer", "description": "Profiles the provider gave you."},
+          "new": {"type": "integer", "description": "Of those, how many you had not seen before."},
+          "passed": {"type": "integer", "description": "Of those, how many cleared your bar."}
+        }
+      },
+      "diagnosis": {"type": "string", "description": "What you concluded the shape of this round means. Your vocabulary, not ours."},
+      "evidence": {"type": "string", "description": "Why. A human must be able to check it, counts beat assertions."},
+      "adjustment": {"type": "object", "description": "What you changed for the next round, and nothing else."},
+      "stop_reason": {"type": ["string", "null"], "description": "Non-null on the final iteration for this vacancy. Required there."}
+    }
+  },
+  "shortlist_json": {
+    "type": "object",
+    "description": "Map of vacancy_id -> ranked list, at most 25 per vacancy, all four vacancies present.",
+    "additionalProperties": {
+      "type": "array",
+      "maxItems": 25,
+      "items": {
+        "type": "object",
+        "required": ["profile_id", "rank", "score", "reason", "evidence"],
+        "properties": {
+          "profile_id": {"type": "string"},
+          "rank": {"type": "integer", "minimum": 1},
+          "score": {"type": "number"},
+          "reason": {"type": "string", "maxLength": 400},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string"},
+                       "description": "Verbatim spans from that profile's own fields."}
+        }
+      }
+    }
+  }
+}

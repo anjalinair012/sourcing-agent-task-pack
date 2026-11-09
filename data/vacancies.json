@@ -1,0 +1,254 @@
+[
+  {
+    "id": "VAC-001",
+    "title": "AI Engineer",
+    "company": "Northbridge Talent Cloud",
+    "description": "We are hiring an AI Engineer to build the matching and search systems behind our hiring\nmarketplace. The work is embeddings and retrieval over resumes and vacancies, LLM features in production\n(structured extraction, RAG), and the evaluation harness that tells us whether any of it works. You would\nown features end to end: pipeline, service, deployment, monitoring.\n\nWe are flexible on where in the EU you sit, and we can be flexible on seniority for the right person, but\nwe are not able to sponsor visas and this is a full-time role.",
+    "hard_requirements": {
+      "location_countries": [
+        "Netherlands",
+        "Germany",
+        "France",
+        "Spain",
+        "Portugal",
+        "Italy",
+        "Poland",
+        "Czechia",
+        "Austria",
+        "Sweden",
+        "Denmark",
+        "Finland",
+        "Ireland",
+        "Belgium",
+        "Hungary",
+        "Romania",
+        "Bulgaria",
+        "Croatia",
+        "Slovenia",
+        "Slovakia",
+        "Estonia",
+        "Latvia",
+        "Lithuania",
+        "Greece"
+      ],
+      "min_years": 3,
+      "employment": "full_time",
+      "work_authorization": "no_sponsorship_available"
+    },
+    "rubric": {
+      "must": [
+        {
+          "criterion": "Strong production Python",
+          "weight": 3
+        },
+        {
+          "criterion": "Hands-on with embeddings, vector search, RAG or LLM APIs in production",
+          "weight": 3
+        },
+        {
+          "criterion": "Has shipped and operated something themselves, not only prototyped",
+          "weight": 2
+        },
+        {
+          "criterion": "Cloud experience (AWS, Azure or GCP)",
+          "weight": 2
+        }
+      ],
+      "nice": [
+        {
+          "criterion": "Search, ranking or relevance background",
+          "weight": 2
+        },
+        {
+          "criterion": "Evaluation and offline metrics experience",
+          "weight": 2
+        },
+        {
+          "criterion": "Some front-end exposure",
+          "weight": 1
+        },
+        {
+          "criterion": "Recruitment or HR-tech data",
+          "weight": 1
+        }
+      ]
+    },
+    "target_strong": 15
+  },
+  {
+    "id": "VAC-002",
+    "title": "Senior Backend Engineer (Python)",
+    "company": "Northbridge Talent Cloud",
+    "description": "Senior backend engineer for the core marketplace services: applications, messaging, billing\nand the public API. Python and Postgres, on AWS.\n\nThis one is genuinely on-site three days a week, so the person has to already live in the Randstad:\nAmsterdam, Utrecht, Rotterdam or Eindhoven. We have tried remote for this team and it did not work. No\nsponsorship, full-time, and we need someone senior: five years minimum, most of it in Python.",
+    "hard_requirements": {
+      "location_cities": [
+        "Amsterdam",
+        "Utrecht",
+        "Rotterdam",
+        "Eindhoven"
+      ],
+      "min_years": 5,
+      "employment": "full_time",
+      "work_authorization": "no_sponsorship_available"
+    },
+    "rubric": {
+      "must": [
+        {
+          "criterion": "5+ years backend engineering, mostly Python",
+          "weight": 3
+        },
+        {
+          "criterion": "Strong relational database and SQL skills",
+          "weight": 3
+        },
+        {
+          "criterion": "Production AWS, containers, infrastructure as code",
+          "weight": 2
+        },
+        {
+          "criterion": "Testing discipline and code review habits",
+          "weight": 2
+        }
+      ],
+      "nice": [
+        {
+          "criterion": "Event streaming (Kafka)",
+          "weight": 1
+        },
+        {
+          "criterion": "Marketplace or fintech domain",
+          "weight": 1
+        },
+        {
+          "criterion": "Mentoring or tech-lead experience",
+          "weight": 1
+        }
+      ]
+    },
+    "target_strong": 10
+  },
+  {
+    "id": "VAC-003",
+    "title": "ML Platform Engineer (MLOps)",
+    "company": "Northbridge Talent Cloud",
+    "description": "Own the platform our models and LLM features run on: training and deployment pipelines,\nmodel registry, rollout strategy, drift and cost monitoring.\n\nThe team is in Stockholm and we want this person in the Nordics for timezone and travel reasons, so\nSweden, Denmark, Finland or Norway. Four years minimum in platform, infrastructure or MLOps work. Full-time, no\nsponsorship.",
+    "hard_requirements": {
+      "location_countries": [
+        "Sweden",
+        "Denmark",
+        "Finland",
+        "Norway"
+      ],
+      "min_years": 4,
+      "employment": "full_time",
+      "work_authorization": "no_sponsorship_available"
+    },
+    "rubric": {
+      "must": [
+        {
+          "criterion": "Operating ML or LLM workloads in production",
+          "weight": 3
+        },
+        {
+          "criterion": "Kubernetes and infrastructure as code",
+          "weight": 3
+        },
+        {
+          "criterion": "Strong Python",
+          "weight": 2
+        },
+        {
+          "criterion": "CI/CD for models, registry, versioning",
+          "weight": 2
+        }
+      ],
+      "nice": [
+        {
+          "criterion": "SageMaker, Vertex AI or Azure ML",
+          "weight": 1
+        },
+        {
+          "criterion": "GPU cost management",
+          "weight": 1
+        },
+        {
+          "criterion": "Feature stores or vector database operations",
+          "weight": 1
+        }
+      ]
+    },
+    "target_strong": 12
+  },
+  {
+    "id": "VAC-004",
+    "title": "Data Engineer",
+    "company": "Northbridge Talent Cloud",
+    "description": "Data engineer for the pipelines feeding analytics, matching and customer reporting.\n\nThe hiring manager has been specific. They want someone who has run dbt AND Flink AND Snowflake in\nproduction, has at least eight years in data engineering, and is a native Dutch speaker because they will\nsit with the Dutch commercial team daily. Anywhere in the EU, full-time, no sponsorship.\n\n(This is the brief as written. Treat it as the brief.)",
+    "hard_requirements": {
+      "location_countries": [
+        "Netherlands",
+        "Germany",
+        "France",
+        "Spain",
+        "Portugal",
+        "Italy",
+        "Poland",
+        "Czechia",
+        "Austria",
+        "Sweden",
+        "Denmark",
+        "Finland",
+        "Ireland",
+        "Belgium",
+        "Hungary",
+        "Romania",
+        "Bulgaria",
+        "Croatia",
+        "Slovenia",
+        "Slovakia",
+        "Estonia",
+        "Latvia",
+        "Lithuania",
+        "Greece"
+      ],
+      "min_years": 8,
+      "employment": "full_time",
+      "work_authorization": "no_sponsorship_available"
+    },
+    "rubric": {
+      "must": [
+        {
+          "criterion": "Production dbt",
+          "weight": 3
+        },
+        {
+          "criterion": "Production Flink",
+          "weight": 3
+        },
+        {
+          "criterion": "Production Snowflake",
+          "weight": 3
+        },
+        {
+          "criterion": "8+ years in data engineering",
+          "weight": 3
+        },
+        {
+          "criterion": "Native Dutch speaker",
+          "weight": 3
+        }
+      ],
+      "nice": [
+        {
+          "criterion": "Airflow",
+          "weight": 1
+        },
+        {
+          "criterion": "Data contracts or quality tooling",
+          "weight": 1
+        }
+      ]
+    },
+    "target_strong": 8
+  }
+]

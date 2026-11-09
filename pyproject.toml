@@ -1,0 +1,36 @@
+[project]
+name = "sourcing-agent"
+version = "0.1.0"
+description = "Agentic candidate sourcing loop over a quota-limited search provider"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.40",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+sourcing-agent = "sourcing_agent.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]  # "." so tests can import the root-level sourcing_provider.py
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["sourcing_provider.py", "example_run.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

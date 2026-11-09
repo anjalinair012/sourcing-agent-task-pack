@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Run output: out/ deliverables are committed; scratch files are not.
+# NOTE: .provider_audit/ MUST be committed (task requirement).
+out/*.tmp
