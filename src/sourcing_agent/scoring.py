@@ -31,7 +31,12 @@ SYSTEM = (
     "You score candidate profiles against a hiring rubric. For every profile and every "
     "criterion, say whether the profile shows it. If it does, quote the exact words that prove "
     "it, copied character for character from the profile. If no text in the profile proves it, "
-    "set met to false and quote to an empty string. Do not guess or infer from the job title alone."
+    "set met to false and quote to an empty string. Do not guess or infer from the job title alone. "
+    "If a profile says nothing about a criterion, it is not met. Some criteria list alternatives or "
+    "examples, such as 'AWS, Azure or GCP' or 'AWS, containers, infrastructure as code': one clearly "
+    "evidenced alternative or a close equivalent is enough (Docker or Kubernetes for containers, "
+    "Terraform for infrastructure as code, GCP for a cloud criterion). years_experience is a field "
+    "you may quote, for example '7.8'."
 )
 
 
@@ -46,6 +51,8 @@ def profile_fields(p: dict) -> list[str]:
     """Every piece of profile text a quote may be copied from."""
     fields = [p.get("headline"), p.get("current_title"), p.get("current_company"), p.get("summary")]
     fields += list(p.get("skills") or []) + list(p.get("languages") or [])
+    if p.get("years_experience") is not None:
+        fields.append(str(p["years_experience"]))
     return [f for f in fields if f]
 
 

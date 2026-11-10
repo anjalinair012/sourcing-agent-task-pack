@@ -30,7 +30,7 @@ pythonpath = [".", "src"]  # "." so tests can import the root-level sourcing_pro
 [tool.ruff]
 line-length = 110
 target-version = "py312"
-extend-exclude = ["sourcing_provider.py", "example_run.py"]
+extend-exclude = ["sourcing_provider.py", "example_run.py", "reports"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
