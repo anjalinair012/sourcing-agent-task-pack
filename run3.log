@@ -1,0 +1,65 @@
+Starting run 'run3', quota left 1500
+[VAC-001 iter 1] planning first search
+[VAC-001 iter 1] searching: 155 unseen profiles match, buying 25
+[VAC-001 iter 1] scoring 25 profiles
+[VAC-001 iter 1] diagnosing (stopping: target_reached)
+[VAC-002 iter 1] planning first search
+[VAC-002 iter 1] searching: 3 unseen profiles match, buying 3
+[VAC-002 iter 1] scoring 3 profiles
+[VAC-002 iter 1] diagnosing
+[VAC-002 iter 2] searching: 26 unseen profiles match, buying 25
+[VAC-002 iter 2] scoring 23 profiles
+[VAC-002 iter 2] diagnosing
+[VAC-002 iter 3] diagnosing
+[VAC-002 iter 4] diagnosing
+[VAC-002 iter 5] diagnosing
+[VAC-002 iter 6] searching: 1 unseen profiles match, buying 1
+[VAC-002 iter 6] scoring 1 profiles
+[VAC-002 iter 6] diagnosing
+[VAC-002 iter 7] diagnosing
+[VAC-002 iter 8] diagnosing
+[VAC-002 iter 9] searching: 46 unseen profiles match, buying 46
+[VAC-002 iter 9] scoring 45 profiles
+[VAC-002 iter 9] diagnosing (stopping: space_exhausted)
+[VAC-003 iter 1] planning first search
+[VAC-003 iter 1] searching: 3 unseen profiles match, buying 3
+[VAC-003 iter 1] scoring 3 profiles
+[VAC-003 iter 1] diagnosing
+[VAC-003 iter 2] searching: 17 unseen profiles match, buying 17
+[VAC-003 iter 2] scoring 16 profiles
+[VAC-003 iter 2] diagnosing
+[VAC-003 iter 3] diagnosing
+[VAC-003 iter 4] searching: 2 unseen profiles match, buying 2
+[VAC-003 iter 4] scoring 2 profiles
+[VAC-003 iter 4] diagnosing
+[VAC-003 iter 5] searching: 168 unseen profiles match, buying 50
+[VAC-003 iter 5] scoring 49 profiles
+[VAC-003 iter 5] diagnosing
+[VAC-003 iter 6] searching: 118 unseen profiles match, buying 50
+[VAC-003 iter 6] scoring 46 profiles
+[VAC-003 iter 6] diagnosing
+[VAC-003 iter 7] searching: 68 unseen profiles match, buying 50
+[VAC-003 iter 7] scoring 46 profiles
+[VAC-003 iter 7] diagnosing
+[VAC-003 iter 8] searching: 18 unseen profiles match, buying 18
+[VAC-003 iter 8] scoring 16 profiles
+[VAC-003 iter 8] diagnosing (stopping: space_exhausted)
+[VAC-004 iter 1] planning first search
+[VAC-004 iter 1] searching: 2 unseen profiles match, buying 2
+[VAC-004 iter 1] scoring 2 profiles
+[VAC-004 iter 1] diagnosing
+[VAC-004 iter 2] searching: 3 unseen profiles match, buying 3
+[VAC-004 iter 2] scoring 3 profiles
+[VAC-004 iter 2] diagnosing
+[VAC-004 iter 3] searching: 9 unseen profiles match, buying 9
+[VAC-004 iter 3] scoring 8 profiles
+[VAC-004 iter 3] diagnosing
+[VAC-004 iter 4] searching: 23 unseen profiles match, buying 23
+[VAC-004 iter 4] scoring 19 profiles
+[VAC-004 iter 4] diagnosing
+[VAC-004 iter 5] diagnosing
+[VAC-004 iter 6] diagnosing
+[VAC-004 iter 7] diagnosing
+[VAC-004 iter 8] diagnosing (stopping: max_iterations)
+Done. LLM cost $0.27. Outputs in out_run3/
+exit 0

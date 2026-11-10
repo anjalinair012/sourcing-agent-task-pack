@@ -23,14 +23,18 @@ dev = [
 requires = ["uv_build>=0.12.1,<0.13.0"]
 build-backend = "uv_build"
 
+[tool.uv.build-backend]
+# sourcing_provider.py is the file supplied with the task; install it next to the agent package.
+module-name = ["sourcing_agent", "sourcing_provider"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = [".", "src"]  # "." so tests can import the root-level sourcing_provider.py
+pythonpath = ["src"]
 
 [tool.ruff]
 line-length = 110
 target-version = "py312"
-extend-exclude = ["sourcing_provider.py", "example_run.py", "reports"]
+extend-exclude = ["src/sourcing_provider", "example_run.py", "reports"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

@@ -1,0 +1,48 @@
+Starting run 'run2', quota left 1500
+[VAC-001 iter 1] planning first search
+[VAC-001 iter 1] searching: 57 unseen profiles match, buying 25
+[VAC-001 iter 1] scoring 24 profiles
+[VAC-001 iter 1] diagnosing (stopping: target_reached)
+[VAC-002 iter 1] planning first search
+[VAC-002 iter 1] searching: 3 unseen profiles match, buying 3
+[VAC-002 iter 1] scoring 3 profiles
+[VAC-002 iter 1] diagnosing
+[VAC-002 iter 2] searching: 25 unseen profiles match, buying 25
+[VAC-002 iter 2] scoring 23 profiles
+[VAC-002 iter 2] diagnosing
+[VAC-002 iter 3] diagnosing
+[VAC-002 iter 4] diagnosing
+[VAC-002 iter 5] diagnosing
+[VAC-002 iter 6] diagnosing
+[VAC-002 iter 7] diagnosing
+[VAC-002 iter 8] searching: 8 unseen profiles match, buying 8
+[VAC-002 iter 8] scoring 8 profiles
+[VAC-002 iter 8] diagnosing (stopping: max_iterations)
+[VAC-003 iter 1] planning first search
+[VAC-003 iter 1] searching: 4 unseen profiles match, buying 4
+[VAC-003 iter 1] scoring 4 profiles
+[VAC-003 iter 1] diagnosing
+[VAC-003 iter 2] searching: 14 unseen profiles match, buying 14
+[VAC-003 iter 2] scoring 13 profiles
+[VAC-003 iter 2] diagnosing
+[VAC-003 iter 3] diagnosing
+[VAC-003 iter 4] diagnosing
+[VAC-003 iter 5] diagnosing
+[VAC-003 iter 6] diagnosing
+[VAC-003 iter 7] searching: 13 unseen profiles match, buying 13
+[VAC-003 iter 7] scoring 13 profiles
+[VAC-003 iter 7] diagnosing (stopping: diminishing_returns)
+[VAC-004 iter 1] planning first search
+[VAC-004 iter 1] searching: 3 unseen profiles match, buying 3
+[VAC-004 iter 1] scoring 3 profiles
+[VAC-004 iter 1] diagnosing
+[VAC-004 iter 2] searching: 2 unseen profiles match, buying 2
+[VAC-004 iter 2] scoring 2 profiles
+[VAC-004 iter 2] diagnosing
+[VAC-004 iter 3] diagnosing
+[VAC-004 iter 4] diagnosing
+[VAC-004 iter 5] searching: 4 unseen profiles match, buying 4
+[VAC-004 iter 5] scoring 3 profiles
+[VAC-004 iter 5] diagnosing (stopping: diminishing_returns)
+Done. LLM cost $0.20. Outputs in out_run2/
+exit 0

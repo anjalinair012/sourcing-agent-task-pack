@@ -1,0 +1,28 @@
+Starting run 'main', quota left 1500
+[VAC-001 iter 1] planning first search
+[VAC-001 iter 1] searching: 57 unseen profiles match, buying 25
+[VAC-001 iter 1] scoring 24 profiles
+[VAC-001 iter 1] diagnosing (stopping: target_reached)
+[VAC-002 iter 1] planning first search
+[VAC-002 iter 1] searching: 3 unseen profiles match, buying 3
+[VAC-002 iter 1] scoring 3 profiles
+[VAC-002 iter 1] diagnosing
+[VAC-002 iter 2] searching: 47 unseen profiles match, buying 25
+[VAC-002 iter 2] scoring 23 profiles
+[VAC-002 iter 2] diagnosing
+[VAC-002 iter 3] diagnosing
+[VAC-002 iter 4] searching: 2 unseen profiles match, buying 2
+[VAC-002 iter 4] scoring 2 profiles
+[VAC-002 iter 4] diagnosing (stopping: diminishing_returns)
+[VAC-003 iter 1] planning first search
+[VAC-003 iter 1] searching: 3 unseen profiles match, buying 3
+[VAC-003 iter 1] scoring 3 profiles
+[VAC-003 iter 1] diagnosing
+[VAC-003 iter 2] searching: 65 unseen profiles match, buying 25
+[VAC-003 iter 2] scoring 24 profiles
+[VAC-003 iter 2] diagnosing (stopping: diminishing_returns)
+[VAC-004 iter 1] planning first search
+[VAC-004 iter 1] diagnosing
+[VAC-004 iter 2] diagnosing (stopping: diminishing_returns)
+Done. LLM cost $0.11. Outputs in out/
+exit 0
