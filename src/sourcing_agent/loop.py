@@ -86,8 +86,10 @@ SOFT_SYSTEM = (
     "requirements are fixed and applied for you; you cannot change them. You only choose "
     "optional filters: keywords (any), keywords_all, titles, skills_any, skills_all, seniority "
     "(intern/entry/junior/mid/senior/lead) and native_language. Use empty lists for filters you "
-    "do not want. Filters combine with AND, so fewer, broader terms find more people; "
-    "skills_all and keywords_all are strict. Base your choice on the counts you are given, and "
+    "do not want. All filters combine with AND. skills_any and keywords match profiles that have "
+    "at least one of the terms. skills_all and keywords_all require every term, so each extra "
+    "term shrinks the results. Start with the loose ones and tighten only when the results are "
+    "too broad. Base your choice on the counts you are given, and "
     "say in the diagnosis what the numbers mean in one or two sentences."
 )
 

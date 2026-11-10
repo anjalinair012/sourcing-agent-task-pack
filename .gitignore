@@ -21,3 +21,7 @@ build/
 # Run output: out/ deliverables are committed; scratch files are not.
 # NOTE: .provider_audit/ MUST be committed (task requirement).
 out/*.tmp
+
+# Debug runs (see .vscode/launch.json)
+out_debug/
+.provider_audit/debug*
