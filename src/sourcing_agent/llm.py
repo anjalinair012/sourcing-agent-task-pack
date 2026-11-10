@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 
 import anthropic
 
@@ -11,6 +12,17 @@ THINKER = "claude-sonnet-5-5"  # diagnosis and the recruiter notes
 PRICES = {SCORER: (0.10, 0.50), THINKER: (2.00, 10.00)}  # USD per 1M tokens: input, output
 MAX_COST = 2.50  # stay under the $3 budget
 
+# An OpenRouter key (sk-or-...) works through the same client, with a different base URL and model names.
+OPENROUTER_URL = "https://openrouter.ai/api"
+OPENROUTER_IDS = {SCORER: "anthropic/claude-haiku-5.5", THINKER: "anthropic/claude-sonnet-5.5"}
+
+
+def make_client() -> anthropic.Anthropic:
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if key.startswith("sk-or-"):
+        return anthropic.Anthropic(base_url=OPENROUTER_URL, auth_token=key, api_key=None)
+    return anthropic.Anthropic()
+
 
 class LLMError(RuntimeError):
     """An LLM call failed, or the cost cap was reached. Callers treat it as a normal condition."""
@@ -18,7 +30,8 @@ class LLMError(RuntimeError):
 
 class LLM:
     def __init__(self, client: anthropic.Anthropic | None = None):
-        self.client = client or anthropic.Anthropic()
+        self.client = client or make_client()
+        self.openrouter = self.client.base_url.host == "openrouter.ai"
         self.cost = 0.0
         self.calls = 0
 
@@ -31,7 +44,8 @@ class LLM:
         for _ in range(3):
             try:
                 r = self.client.messages.create(
-                    model=model, max_tokens=max_tokens, system=system,
+                    model=OPENROUTER_IDS[model] if self.openrouter else model,
+                    max_tokens=max_tokens, system=system,
                     messages=[{"role": "user", "content": user}],
                     output_config={"effort": effort,
                                    "format": {"type": "json_schema", "schema": schema}},
