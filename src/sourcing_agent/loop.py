@@ -22,6 +22,9 @@ from .state import State
 PAGE = 25            # profiles bought per round
 MAX_ITERATIONS = 8   # per vacancy
 DRY_ROUNDS = 3       # rounds in a row that bought profiles but found no new strong candidate
+SWEEP_MAX = 200      # if this few unseen profiles remain when the loop would give up, buy them all
+SWEEP_PAGE = 50      # provider maximum page size
+GIVE_UP = ("max_iterations", "diminishing_returns", "no_matches")
 
 
 @dataclass
@@ -96,12 +99,14 @@ SOFT_SYSTEM = (
 
 
 def propose(ctx: Ctx, vac: dict, soft: dict, observed: dict | None, evidence: str,
-            history: list[dict]) -> tuple[str, dict]:
+            history: list[dict], pool_note: str = "") -> tuple[str, dict]:
     """Ask the LLM for the next soft filters. Returns (diagnosis, validated soft filters)."""
     rubric = json.dumps(vac["rubric"])
     parts = [f"Vacancy: {vac['title']}\n{vac['description']}\nRubric: {rubric}",
              f"Target: {vac['target_strong']} strong candidates.",
              f"Current soft filters: {json.dumps(soft)}"]
+    if pool_note:
+        parts.append(pool_note)
     if observed is None:
         parts.append("No search has run yet. Choose a sensible first set of soft filters.")
     else:
@@ -136,6 +141,30 @@ def dry_rounds(trace: list[dict], returned: int, passed_now: int) -> int:
     return dry
 
 
+def unseen(v: dict) -> int | None:
+    """Profiles that meet the hard requirements and have not been bought yet (None if pool unknown)."""
+    return None if v.get("pool") is None else v["pool"] - len(v["seen"])
+
+
+def pool_note(v: dict) -> str:
+    if v.get("pool") is None:
+        return ""
+    return (f"Pool: {v['pool']} profiles in the whole database meet the hard requirements; "
+            f"{len(v['seen'])} bought so far, {unseen(v)} still unseen.")
+
+
+def maybe_sweep(v: dict, reason: str | None) -> str | None:
+    """If the loop is about to give up but the rest of the pool is small and affordable, buy it all.
+
+    Returns None (keep going) when a sweep starts, otherwise the reason unchanged.
+    """
+    left = unseen(v)
+    if reason in GIVE_UP and left is not None and 0 < left <= min(SWEEP_MAX, v["share"] - v["spent"]):
+        v["sweep"] = True
+        return None
+    return reason
+
+
 def stop_reason(v: dict, vac: dict, it: int, total: int, returned: int, passed_now: int,
                 forced_stop: str | None, provider) -> str | None:
     """Decide in code whether to stop. Returns the stop_reason, or None to carry on."""
@@ -148,8 +177,11 @@ def stop_reason(v: dict, vac: dict, it: int, total: int, returned: int, passed_n
         return "provider_quota_exhausted"
     if v["spent"] >= v["share"]:
         return "quota_share_exhausted"
-    if total <= returned and not v["soft"]:
-        return "space_exhausted"  # nothing left that meets the hard requirements
+    left = unseen(v)
+    if (left is not None and left <= 0) or (total <= returned and not v["soft"]):
+        return "space_exhausted"  # every profile that meets the hard requirements has been bought
+    if v.get("sweep"):
+        return None  # sweeping buys everything left; only the checks above end it
     if it >= MAX_ITERATIONS:
         return "max_iterations"
     if dry_rounds(v["trace"], returned, passed_now) >= DRY_ROUNDS:
@@ -162,10 +194,11 @@ def buy_profiles(ctx: Ctx, vac: dict, v: dict, it: int) -> None:
     vid, provider = vac["id"], ctx.provider
     if it == 1 and not v["soft"]:
         say(ctx, vid, it, "planning first search")
-        _, v["soft"] = propose(ctx, vac, {}, None, "", [])
+        _, v["soft"] = propose(ctx, vac, {}, None, "", [], pool_note(v))
     filters = build_filters(vac, v["soft"], list(v["seen"]))
     total = call(provider.count, tag=vid, **filters)  # free
-    page = min(PAGE, v["share"] - v["spent"], provider.quota_remaining(), total)
+    page = min(SWEEP_PAGE if v.get("sweep") else PAGE, v["share"] - v["spent"],
+               provider.quota_remaining(), total)
     ids, forced_stop = [], None
     if page > 0:
         say(ctx, vid, it, f"searching: {total} unseen profiles match, buying {page}")
@@ -218,14 +251,19 @@ def one_round(ctx: Ctx, vac: dict, v: dict) -> None:
     evidence = (f"{len(ids)} bought; {dropped} dropped for sponsorship/part-time; "
                 f"{unscored} not scored (LLM failure); {passed_now} passed this round; "
                 f"{strong_total} strong in total, target {vac['target_strong']}. "
-                + skill_evidence(v))
+                + pool_note(v) + " " + skill_evidence(v))
 
     reason = stop_reason(v, vac, it, pend["total"], len(ids), passed_now, pend["forced_stop"], ctx.provider)
+    reason = maybe_sweep(v, reason)
     say(ctx, vid, it, "diagnosing" + (f" (stopping: {reason})" if reason else ""))
     this_round = {"criteria": pend["criteria"], "observed": observed}
-    diagnosis, new_soft = propose(ctx, vac, v["soft"], observed, evidence, v["trace"] + [this_round])
+    diagnosis, new_soft = propose(ctx, vac, v["soft"], observed, evidence, v["trace"] + [this_round],
+                                  pool_note(v))
     if not reason and pend["total"] == 0 and new_soft == v["soft"]:
-        reason = "no_matches"  # nothing matched and the next filters would be the same: retrying is pointless
+        reason = maybe_sweep(v, "no_matches")  # nothing matched and the filters would not change
+    if v.get("sweep") and not reason:
+        new_soft = {}  # sweeping: hard requirements only, buy everything that is left
+        evidence += f" Sweep mode: buying the {unseen(v)} unseen profiles that meet the hard requirements."
 
     v["trace"].append({
         "vacancy_id": vid, "iteration": it, "criteria": pend["criteria"], "observed": observed,
@@ -245,6 +283,12 @@ def run_vacancy(ctx: Ctx, vac: dict, share: int) -> None:
     v = ctx.state.vacancy(vac["id"])
     if "share" not in v:
         v["share"], v["spent"] = share, 0
+    if "pool" not in v:  # free: how many profiles in the whole database meet the hard requirements
+        try:
+            v["pool"] = call(ctx.provider.count, tag=vac["id"], **hard_filters(vac))
+        except ProviderUnavailable:
+            v["pool"] = None
+        ctx.state.save()
     while v["stop_reason"] is None and not ctx.stop.is_set():
         one_round(ctx, vac, v)
 

@@ -1,0 +1,709 @@
+{
+  "VAC-001": [
+    {
+      "profile_id": "PROF-0121",
+      "rank": 1,
+      "score": 0.875,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "Shipped a retrieval-augmented travel feature",
+        "Azure OpenAI",
+        "ML Engineer, Search"
+      ]
+    },
+    {
+      "profile_id": "PROF-0347",
+      "rank": 2,
+      "score": 0.875,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "Cut LLM spend 27% with prompt caching and a small-model router",
+        "Cut LLM spend 27%",
+        "AWS"
+      ]
+    },
+    {
+      "profile_id": "PROF-0678",
+      "rank": 3,
+      "score": 0.875,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "Cut LLM spend 60% with prompt caching and a small-model router",
+        "Runs the offline eval suite",
+        "AWS"
+      ]
+    },
+    {
+      "profile_id": "PROF-1040",
+      "rank": 4,
+      "score": 0.875,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "embeddings",
+        "Built the booking embedding pipeline over 3M documents and the ANN index behind it.",
+        "AWS"
+      ]
+    },
+    {
+      "profile_id": "PROF-1433",
+      "rank": 5,
+      "score": 0.875,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "Anthropic API",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 70ms.",
+        "GCP"
+      ]
+    },
+    {
+      "profile_id": "PROF-0244",
+      "rank": 6,
+      "score": 0.75,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 90ms",
+        "p95 latency 90ms",
+        "Fine-tuned a cross-encoder re-ranker"
+      ]
+    },
+    {
+      "profile_id": "PROF-0632",
+      "rank": 7,
+      "score": 0.75,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "embeddings",
+        "Built the energy embedding pipeline over 4M documents and the ANN index behind it.",
+        "AWS"
+      ]
+    },
+    {
+      "profile_id": "PROF-0761",
+      "rank": 8,
+      "score": 0.75,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 50ms",
+        "p95 latency 50ms",
+        "Replaced keyword search with hybrid dense + BM25 retrieval"
+      ]
+    },
+    {
+      "profile_id": "PROF-1406",
+      "rank": 9,
+      "score": 0.75,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 90ms",
+        "p95 latency 90ms",
+        "Fine-tuned a cross-encoder re-ranker; lifted top-5 precision 31%"
+      ]
+    },
+    {
+      "profile_id": "PROF-1457",
+      "rank": 10,
+      "score": 0.75,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "Replaced keyword search with hybrid dense + BM25 retrieval",
+        "p95 latency 20ms",
+        "AWS"
+      ]
+    },
+    {
+      "profile_id": "PROF-2480",
+      "rank": 11,
+      "score": 0.75,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background. Missing must-haves: nothing.",
+      "evidence": [
+        "Python",
+        "embeddings",
+        "Built the subscription embedding pipeline over 9M documents and the ANN index behind it.",
+        "Azure OpenAI"
+      ]
+    },
+    {
+      "profile_id": "PROF-0588",
+      "rank": 12,
+      "score": 0.625,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "RAG",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 70ms."
+      ]
+    },
+    {
+      "profile_id": "PROF-0640",
+      "rank": 13,
+      "score": 0.625,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "Shipped a retrieval-augmented customer feature",
+        "hybrid retrieval"
+      ]
+    },
+    {
+      "profile_id": "PROF-0666",
+      "rank": 14,
+      "score": 0.625,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "OpenAI API",
+        "Shipped a retrieval-augmented marketplace feature: chunking, hybrid retrieval, citation-grounded answers.",
+        "ML Engineer, Search"
+      ]
+    },
+    {
+      "profile_id": "PROF-1385",
+      "rank": 15,
+      "score": 0.625,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "RAG",
+        "Shipped a retrieval-augmented energy feature: chunking, hybrid retrieval, citation-grounded answers.",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 50ms."
+      ]
+    },
+    {
+      "profile_id": "PROF-1627",
+      "rank": 16,
+      "score": 0.625,
+      "reason": "Strong fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Search, ranking or relevance background. Missing must-haves: Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "Anthropic API",
+        "Cut LLM spend 31% with prompt caching and a small-model router, with no measured quality loss.",
+        "Replaced keyword search with hybrid dense + BM25 retrieval; p95 latency 40ms."
+      ]
+    },
+    {
+      "profile_id": "PROF-2259",
+      "rank": 17,
+      "score": 0.688,
+      "reason": "Partial fit. Shows: Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background; Evaluation and offline metrics experience. Missing must-haves: Strong production Python.",
+      "evidence": [
+        "Built the retail embedding pipeline over 8M documents and the ANN index behind it.",
+        "AWS",
+        "ML Engineer, Search",
+        "Runs the offline eval suite (nDCG@10, groundedness)"
+      ]
+    },
+    {
+      "profile_id": "PROF-2236",
+      "rank": 18,
+      "score": 0.562,
+      "reason": "Partial fit. Shows: Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Evaluation and offline metrics experience. Missing must-haves: Strong production Python.",
+      "evidence": [
+        "Cut LLM spend 52% with prompt caching and a small-model router",
+        "Runs the offline eval suite (nDCG@10, groundedness) that gates every model change in CI.",
+        "Azure OpenAI",
+        "Runs the offline eval suite (nDCG@10, groundedness)"
+      ]
+    },
+    {
+      "profile_id": "PROF-2289",
+      "rank": 19,
+      "score": 0.562,
+      "reason": "Partial fit. Shows: Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP); Search, ranking or relevance background. Missing must-haves: Strong production Python.",
+      "evidence": [
+        "Cut LLM spend 12% with prompt caching and a small-model router",
+        "Cut LLM spend 12% with prompt caching and a small-model router, with no measured quality loss.",
+        "GCP",
+        "Fine-tuned a cross-encoder re-ranker"
+      ]
+    },
+    {
+      "profile_id": "PROF-1801",
+      "rank": 20,
+      "score": 0.5,
+      "reason": "Partial fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Evaluation and offline metrics experience. Missing must-haves: Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "RAG",
+        "prompt evaluation"
+      ]
+    },
+    {
+      "profile_id": "PROF-0433",
+      "rank": 21,
+      "score": 0.375,
+      "reason": "Partial fit. Shows: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production. Missing must-haves: Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Python",
+        "embeddings"
+      ]
+    },
+    {
+      "profile_id": "PROF-1489",
+      "rank": 22,
+      "score": 0.312,
+      "reason": "Partial fit. Shows: Strong production Python; Cloud experience (AWS, Azure or GCP). Missing must-haves: Hands-on with embeddings, vector search, RAG or LLM APIs in production; Has shipped and operated something themselves, not only prototyped.",
+      "evidence": [
+        "Python",
+        "GCP"
+      ]
+    },
+    {
+      "profile_id": "PROF-1912",
+      "rank": 23,
+      "score": 0.188,
+      "reason": "Partial fit. Shows: Hands-on with embeddings, vector search, RAG or LLM APIs in production. Missing must-haves: Strong production Python; Has shipped and operated something themselves, not only prototyped; Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "OpenAI API"
+      ]
+    },
+    {
+      "profile_id": "PROF-0378",
+      "rank": 24,
+      "score": 0.125,
+      "reason": "Partial fit. Shows: Has shipped and operated something themselves, not only prototyped. Missing must-haves: Strong production Python; Hands-on with embeddings, vector search, RAG or LLM APIs in production; Cloud experience (AWS, Azure or GCP).",
+      "evidence": [
+        "Firmware for payments controllers shipping in 60k units a year"
+      ]
+    }
+  ],
+  "VAC-002": [
+    {
+      "profile_id": "PROF-2456",
+      "rank": 1,
+      "score": 0.769,
+      "reason": "Strong fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Testing discipline and code review habits; Event streaming (Kafka); Marketplace or fintech domain. Missing must-haves: Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "14.3",
+        "SQL",
+        "Introduced contract testing between producers and the warehouse",
+        "Kafka"
+      ]
+    },
+    {
+      "profile_id": "PROF-024",
+      "rank": 2,
+      "score": 0.692,
+      "reason": "Strong fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Testing discipline and code review habits; Event streaming (Kafka). Missing must-haves: Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "7.1",
+        "SQL",
+        "Introduced contract testing between producers and the warehouse",
+        "Kafka"
+      ]
+    },
+    {
+      "profile_id": "PROF-0540",
+      "rank": 3,
+      "score": 0.692,
+      "reason": "Strong fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Testing discipline and code review habits; Event streaming (Kafka). Missing must-haves: Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "10.8",
+        "PostgreSQL",
+        "Migrated the catalogue API to FastAPI with typed contracts and contract tests.",
+        "Kafka"
+      ]
+    },
+    {
+      "profile_id": "PROF-0193",
+      "rank": 4,
+      "score": 0.615,
+      "reason": "Strong fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Production AWS, containers, infrastructure as code. Missing must-haves: Testing discipline and code review habits.",
+      "evidence": [
+        "9.1",
+        "PostgreSQL",
+        "Terraform"
+      ]
+    },
+    {
+      "profile_id": "PROF-022",
+      "rank": 5,
+      "score": 0.538,
+      "reason": "Partial fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Event streaming (Kafka). Missing must-haves: Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "6.2",
+        "Postgres",
+        "Built an async job framework on top of Kafka"
+      ]
+    },
+    {
+      "profile_id": "PROF-0559",
+      "rank": 6,
+      "score": 0.538,
+      "reason": "Partial fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Mentoring or tech-lead experience. Missing must-haves: Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "Python services handling 5k requests per second",
+        "Postgres",
+        "Led the split of a onboarding monolith into services"
+      ]
+    },
+    {
+      "profile_id": "PROF-1781",
+      "rank": 7,
+      "score": 0.538,
+      "reason": "Partial fit. Shows: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Event streaming (Kafka). Missing must-haves: Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "7.8",
+        "PostgreSQL",
+        "Kafka"
+      ]
+    },
+    {
+      "profile_id": "PROF-2326",
+      "rank": 8,
+      "score": 0.462,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills; Testing discipline and code review habits; Event streaming (Kafka). Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "SQL",
+        "Introduced contract testing between producers and the warehouse",
+        "Built the streaming path with Kafka Connect for near-real-time booking"
+      ]
+    },
+    {
+      "profile_id": "PROF-0166",
+      "rank": 9,
+      "score": 0.385,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills; Testing discipline and code review habits. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "SQL",
+        "Owns the regression suite: 6k automated tests running on every merge."
+      ]
+    },
+    {
+      "profile_id": "PROF-0877",
+      "rank": 10,
+      "score": 0.385,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills; Testing discipline and code review habits. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "PostgreSQL",
+        "Set up the component library and the visual regression tests."
+      ]
+    },
+    {
+      "profile_id": "PROF-1710",
+      "rank": 11,
+      "score": 0.385,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills; Testing discipline and code review habits. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "PostgreSQL",
+        "Set up the component library and the visual regression tests."
+      ]
+    },
+    {
+      "profile_id": "PROF-2188",
+      "rank": 12,
+      "score": 0.385,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills; Testing discipline and code review habits. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code.",
+      "evidence": [
+        "PostgreSQL",
+        "Set up the component library and the visual regression tests."
+      ]
+    },
+    {
+      "profile_id": "PROF-004",
+      "rank": 13,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-0389",
+      "rank": 14,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-0485",
+      "rank": 15,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-0798",
+      "rank": 16,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-0902",
+      "rank": 17,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-1358",
+      "rank": 18,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-1362",
+      "rank": 19,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "SQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-1583",
+      "rank": 20,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "PostgreSQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-1761",
+      "rank": 21,
+      "score": 0.231,
+      "reason": "Partial fit. Shows: Strong relational database and SQL skills. Missing must-haves: 5+ years backend engineering, mostly Python; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "PostgreSQL"
+      ]
+    },
+    {
+      "profile_id": "PROF-2079",
+      "rank": 22,
+      "score": 0.077,
+      "reason": "Partial fit. Shows: Marketplace or fintech domain. Missing must-haves: 5+ years backend engineering, mostly Python; Strong relational database and SQL skills; Production AWS, containers, infrastructure as code; Testing discipline and code review habits.",
+      "evidence": [
+        "Owns the payments clusters"
+      ]
+    }
+  ],
+  "VAC-003": [
+    {
+      "profile_id": "PROF-0328",
+      "rank": 1,
+      "score": 0.615,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python; CI/CD for models, registry, versioning; SageMaker, Vertex AI or Azure ML. Missing must-haves: Kubernetes and infrastructure as code.",
+      "evidence": [
+        "Built the uplift model behind the payments campaign; 31% incremental revenue.",
+        "Python",
+        "Set up experiment tracking and a model registry the analytics team also uses.",
+        "AWS SageMaker"
+      ]
+    },
+    {
+      "profile_id": "PROF-2478",
+      "rank": 2,
+      "score": 0.615,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python; SageMaker, Vertex AI or Azure ML; GPU cost management; Feature stores or vector database operations. Missing must-haves: Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Built the drift-monitoring stack; alerts route to the owning model team.",
+        "Python",
+        "AWS SageMaker",
+        "Cut GPU spend 27% with right-sized node pools and spot instances."
+      ]
+    },
+    {
+      "profile_id": "PROF-2202",
+      "rank": 3,
+      "score": 0.538,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python; SageMaker, Vertex AI or Azure ML; Feature stores or vector database operations. Missing must-haves: Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Operates the ML platform: pipelines, registry, feature store, canary rollouts.",
+        "Python",
+        "AWS SageMaker",
+        "feature store"
+      ]
+    },
+    {
+      "profile_id": "PROF-1462",
+      "rank": 4,
+      "score": 0.462,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python; Feature stores or vector database operations. Missing must-haves: Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Operates the ML platform: pipelines, registry, feature store, canary rollouts.",
+        "Python",
+        "feature store"
+      ]
+    },
+    {
+      "profile_id": "PROF-1904",
+      "rank": 5,
+      "score": 0.462,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python; SageMaker, Vertex AI or Azure ML. Missing must-haves: Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Owns the feature pipeline and weekly retraining for the fraud model family.",
+        "Python",
+        "AWS SageMaker"
+      ]
+    },
+    {
+      "profile_id": "PROF-0258",
+      "rank": 6,
+      "score": 0.385,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python. Missing must-haves: Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Built the uplift model behind the marketplace campaign; 22% incremental revenue.",
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-0674",
+      "rank": 7,
+      "score": 0.385,
+      "reason": "Partial fit. Shows: Operating ML or LLM workloads in production; Strong Python. Missing must-haves: Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Defect-detection models for customer inspection; ONNX export and edge inference.",
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-021",
+      "rank": 8,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-0213",
+      "rank": 9,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-0319",
+      "rank": 10,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-0361",
+      "rank": 11,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-0836",
+      "rank": 12,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1119",
+      "rank": 13,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1124",
+      "rank": 14,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1152",
+      "rank": 15,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1272",
+      "rank": 16,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1280",
+      "rank": 17,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1315",
+      "rank": 18,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1356",
+      "rank": 19,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1650",
+      "rank": 20,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    },
+    {
+      "profile_id": "PROF-1711",
+      "rank": 21,
+      "score": 0.154,
+      "reason": "Partial fit. Shows: Strong Python. Missing must-haves: Operating ML or LLM workloads in production; Kubernetes and infrastructure as code; CI/CD for models, registry, versioning.",
+      "evidence": [
+        "Python"
+      ]
+    }
+  ],
+  "VAC-004": []
+}

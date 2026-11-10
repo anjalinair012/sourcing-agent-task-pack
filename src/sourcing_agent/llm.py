@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 
 import anthropic
 
@@ -34,6 +35,7 @@ class LLM:
         self.openrouter = self.client.base_url.host == "openrouter.ai"
         self.cost = 0.0
         self.calls = 0
+        self._lock = threading.Lock()  # scoring runs several calls at once
 
     def ask_json(self, model: str, system: str, user: str, schema: dict,
                  max_tokens: int = 4000, effort: str = "low") -> dict:
@@ -50,9 +52,10 @@ class LLM:
                     output_config={"effort": effort,
                                    "format": {"type": "json_schema", "schema": schema}},
                 )
-                self.calls += 1
                 price_in, price_out = PRICES[model]
-                self.cost += (r.usage.input_tokens * price_in + r.usage.output_tokens * price_out) / 1e6
+                with self._lock:
+                    self.calls += 1
+                    self.cost += (r.usage.input_tokens * price_in + r.usage.output_tokens * price_out) / 1e6
                 text = next(b.text for b in r.content if b.type == "text")
                 return json.loads(text)
             except anthropic.AuthenticationError:
