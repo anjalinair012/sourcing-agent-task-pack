@@ -119,12 +119,12 @@ def propose(ctx: Ctx, vac: dict, soft: dict, observed: dict | None, evidence: st
 # ---------------------------------------------------------------- one round
 
 def stop_reason(v: dict, vac: dict, it: int, total: int, returned: int, passed_now: int,
-                hint: str | None, provider) -> str | None:
+                forced_stop: str | None, provider) -> str | None:
     """Decide in code whether to stop. Returns the stop_reason, or None to carry on."""
     total_passed = sum(1 for s in v["scores"].values() if s["passed"])
     previous_passed = v["trace"][-1]["observed"]["passed"] if v["trace"] else None
-    if hint:
-        return hint
+    if forced_stop:
+        return forced_stop
     if total_passed >= vac["target_strong"]:
         return "target_reached"
     if provider.quota_remaining() <= 0:
@@ -149,7 +149,7 @@ def buy_profiles(ctx: Ctx, vac: dict, v: dict, it: int) -> None:
     filters = build_filters(vac, v["soft"], list(v["seen"]))
     total = call(provider.count, tag=vid, **filters)  # free
     page = min(PAGE, v["share"] - v["spent"], provider.quota_remaining(), total)
-    ids, hint = [], None
+    ids, forced_stop = [], None
     if page > 0:
         say(ctx, vid, it, f"searching: {total} unseen profiles match, buying {page}")
         try:
@@ -159,11 +159,11 @@ def buy_profiles(ctx: Ctx, vac: dict, v: dict, it: int) -> None:
             ids = [p["profile_id"] for p in r.profiles]
             v["spent"] += len(ids)
         except QuotaExceeded:
-            hint = "provider_quota_exhausted"
+            forced_stop = "provider_quota_exhausted"
         except ProviderUnavailable:
-            hint = "provider_unavailable"
+            forced_stop = "provider_unavailable"
     shown = {"hard": hard_filters(vac), "soft": v["soft"], "exclude_seen": len(v["seen"]) - len(ids)}
-    v["pending"] = {"criteria": shown, "total": total, "ids": ids, "hint": hint}
+    v["pending"] = {"criteria": shown, "total": total, "ids": ids, "forced_stop": forced_stop}
     ctx.state.save()  # before scoring: a kill after this never makes us pay for these profiles again
 
 
@@ -203,7 +203,7 @@ def one_round(ctx: Ctx, vac: dict, v: dict) -> None:
                 f"{strong_total} strong in total, target {vac['target_strong']}. "
                 + skill_evidence(v))
 
-    reason = stop_reason(v, vac, it, pend["total"], len(ids), passed_now, pend["hint"], ctx.provider)
+    reason = stop_reason(v, vac, it, pend["total"], len(ids), passed_now, pend["forced_stop"], ctx.provider)
     say(ctx, vid, it, "diagnosing" + (f" (stopping: {reason})" if reason else ""))
     this_round = {"criteria": pend["criteria"], "observed": observed}
     diagnosis, new_soft = propose(ctx, vac, v["soft"], observed, evidence, v["trace"] + [this_round])
