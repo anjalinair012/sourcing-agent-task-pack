@@ -13,7 +13,7 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
-from .criteria import SOFT_KEYS, build_filters, passes_hard
+from .criteria import SOFT_KEYS, build_filters, hard_filters, passes_hard
 from .llm import LLM, THINKER, LLMError
 from .provider import ProviderUnavailable, QuotaExceeded, call
 from .scoring import score_profiles
@@ -162,8 +162,7 @@ def buy_profiles(ctx: Ctx, vac: dict, v: dict, it: int) -> None:
             hint = "provider_quota_exhausted"
         except ProviderUnavailable:
             hint = "provider_unavailable"
-    shown = {k: val for k, val in filters.items() if k != "exclude_profile_ids"}
-    shown.update(soft=v["soft"], exclude_seen=len(v["seen"]) - len(ids))
+    shown = {"hard": hard_filters(vac), "soft": v["soft"], "exclude_seen": len(v["seen"]) - len(ids)}
     v["pending"] = {"criteria": shown, "total": total, "ids": ids, "hint": hint}
     ctx.state.save()  # before scoring: a kill after this never makes us pay for these profiles again
 

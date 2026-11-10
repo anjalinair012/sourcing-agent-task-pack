@@ -36,7 +36,7 @@ def main(argv: list[str] | None = None) -> int:
 
     state_path = args.out / "state.json"
     if args.fresh and state_path.exists():
-        state_path.unlink()
+        state_path.unlink() # Unix term for removing a file
     state = State(state_path)
     resuming = state.exists()
     # reset=True wipes the provider's quota counter, so only do it on a brand new run.
