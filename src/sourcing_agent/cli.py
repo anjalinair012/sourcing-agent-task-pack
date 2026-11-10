@@ -10,6 +10,7 @@ import threading
 import time
 from pathlib import Path
 
+import anthropic
 from dotenv import load_dotenv
 
 from sourcing_provider import SourcingProvider
@@ -57,7 +58,14 @@ def main(argv: list[str] | None = None) -> int:
           f"quota left {provider.quota_remaining()}", file=sys.stderr)
     started = time.time()
     ctx = Ctx(provider=provider, llm=llm, state=state, out_dir=args.out, stop=stop)
-    run_all(ctx, vacancies)
+    try:
+        run_all(ctx, vacancies)
+    except anthropic.AuthenticationError:
+        state.save()
+        print("The Anthropic API rejected the key. Check ANTHROPIC_API_KEY in .env "
+              "(format: ANTHROPIC_API_KEY=sk-ant-..., no quotes). Progress is saved; rerun to resume.",
+              file=sys.stderr)
+        return 2
     state.data["elapsed_s"] = state.data.get("elapsed_s", 0) + time.time() - started
     state.save()
     write_outputs(state, vacancies, llm, args.out)

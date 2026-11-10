@@ -41,6 +41,8 @@ class LLM:
                 self.cost += (r.usage.input_tokens * price_in + r.usage.output_tokens * price_out) / 1e6
                 text = next(b.text for b in r.content if b.type == "text")
                 return json.loads(text)
+            except anthropic.AuthenticationError:
+                raise  # a rejected key is not transient: stop the run instead of retrying
             except (anthropic.APIError, json.JSONDecodeError, StopIteration) as e:
                 last = e
         raise LLMError(f"LLM call failed 3 times: {last}")
