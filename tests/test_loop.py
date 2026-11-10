@@ -61,7 +61,7 @@ def test_every_vacancy_ends_with_a_stop_reason_and_respects_quota(provider, tmp_
     for vac in VACANCIES:
         v = state.vacancy(vac["id"])
         assert v["stop_reason"] in {"diminishing_returns", "space_exhausted", "max_iterations",
-                                    "quota_share_exhausted", "target_reached"}
+                                    "quota_share_exhausted", "target_reached", "no_matches"}
         assert v["trace"][-1]["stop_reason"] == v["stop_reason"]
         assert v["spent"] <= v["share"]
     assert provider.quota_remaining() >= 0

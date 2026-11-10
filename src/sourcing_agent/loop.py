@@ -21,6 +21,7 @@ from .state import State
 
 PAGE = 25            # profiles bought per round
 MAX_ITERATIONS = 8   # per vacancy
+DRY_ROUNDS = 3       # rounds in a row that bought profiles but found no new strong candidate
 
 
 @dataclass
@@ -118,11 +119,27 @@ def propose(ctx: Ctx, vac: dict, soft: dict, observed: dict | None, evidence: st
 
 # ---------------------------------------------------------------- one round
 
+def dry_rounds(trace: list[dict], returned: int, passed_now: int) -> int:
+    """How many rounds in a row, counting this one, bought profiles but found no new strong one.
+
+    A round that bought nothing is skipped: it cost no quota and says nothing about the pool.
+    """
+    rounds = [(t["observed"]["returned"], t["observed"]["passed"]) for t in trace]
+    rounds.append((returned, passed_now))
+    dry = 0
+    for bought, passed in reversed(rounds):
+        if bought == 0:
+            continue
+        if passed > 0:
+            break
+        dry += 1
+    return dry
+
+
 def stop_reason(v: dict, vac: dict, it: int, total: int, returned: int, passed_now: int,
                 forced_stop: str | None, provider) -> str | None:
     """Decide in code whether to stop. Returns the stop_reason, or None to carry on."""
     total_passed = sum(1 for s in v["scores"].values() if s["passed"])
-    previous_passed = v["trace"][-1]["observed"]["passed"] if v["trace"] else None
     if forced_stop:
         return forced_stop
     if total_passed >= vac["target_strong"]:
@@ -135,8 +152,8 @@ def stop_reason(v: dict, vac: dict, it: int, total: int, returned: int, passed_n
         return "space_exhausted"  # nothing left that meets the hard requirements
     if it >= MAX_ITERATIONS:
         return "max_iterations"
-    if passed_now == 0 and previous_passed == 0:
-        return "diminishing_returns"  # two rounds in a row with no new strong candidate
+    if dry_rounds(v["trace"], returned, passed_now) >= DRY_ROUNDS:
+        return "diminishing_returns"
     return None
 
 
@@ -207,6 +224,8 @@ def one_round(ctx: Ctx, vac: dict, v: dict) -> None:
     say(ctx, vid, it, "diagnosing" + (f" (stopping: {reason})" if reason else ""))
     this_round = {"criteria": pend["criteria"], "observed": observed}
     diagnosis, new_soft = propose(ctx, vac, v["soft"], observed, evidence, v["trace"] + [this_round])
+    if not reason and pend["total"] == 0 and new_soft == v["soft"]:
+        reason = "no_matches"  # nothing matched and the next filters would be the same: retrying is pointless
 
     v["trace"].append({
         "vacancy_id": vid, "iteration": it, "criteria": pend["criteria"], "observed": observed,
